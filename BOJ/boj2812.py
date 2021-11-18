@@ -21,15 +21,3 @@ for _ in range(k):
     ptr = erase(ptr)
 
 print(''.join(map(str, result)) + ''.join(map(str, num[ptr:])))
-
-
-
-
-# n, k = map(int, input().split())
-# num = list(map(int, input()))
-# for _ in range(k):
-#     for i in range(len(num)):
-#         if num[i] < num[i+1]:
-#             num.pop(i)
-#             break
-# print(''.join(map(str, num)))

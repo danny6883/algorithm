@@ -1,15 +1,11 @@
 n = int(input())
 a = list(map(int, input().split()))
-lis = []
-lis.append(a[0])
-i = 1
-while i < n:
-    if lis[-1] < a[i]:
-        lis.append(a[i])
-        i += 1
-    elif lis[-1] > a[i]:
-        small = 1
-        while i+small >= n or lis[-1] > a[i+small]:
-            small += 1
-            
-print(len(lis))
+length = [0]*n
+length[0] = 1
+for i in range(1,n):
+    max_length = 0
+    for index in range(0,i):
+        if a[i] > a[index] and max_length < length[index]:
+            max_length = length[index]
+    length[i] = max_length + 1
+print(max(length))
